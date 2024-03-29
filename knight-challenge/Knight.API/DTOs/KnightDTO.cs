@@ -3,19 +3,20 @@ using Entity = Knight.Application.Entity.Knight;
 
 namespace Knight.DTOs
 {
+    [Serializable]
     public class KnightDTO
     {
-        public ObjectId Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Nickname { get; set; }
-        public string BirthDay { get; set; }
+        public DateTime BirthDay { get; set; }
         public List<WeaponDTO> Weapons { get; set; }
         public AttributesDTO Attributes { get; set; }
         public string KeyAttribute { get; set; }
 
         public KnightDTO(Entity knight)
         {
-            Id = knight.Id;
+            Id = knight.Id.ToString();
             Name = knight.Name;
             Nickname = knight.Nickname;
             BirthDay = knight.BirthDay;
@@ -30,7 +31,7 @@ namespace Knight.DTOs
         {
             return new Entity()
             {
-                Id = Id,
+                Id = new ObjectId(Id),
                 Attributes = Attributes.ToAttributes(),
                 BirthDay  = BirthDay,
                 KeyAttribute = KeyAttribute,

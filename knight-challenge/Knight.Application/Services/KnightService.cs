@@ -32,7 +32,7 @@ namespace Knight.Application.Services
         public void Save(Entity.Knight obj)
         {
             var changedIncome = obj;
-            if (obj.Id != null)
+            if (obj.Id != ObjectId.Empty)
             {
                 var oldObject = GetById(obj.Id);
                 changedIncome = oldObject.Update(obj);

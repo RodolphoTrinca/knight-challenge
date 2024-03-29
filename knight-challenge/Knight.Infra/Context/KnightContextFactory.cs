@@ -15,8 +15,8 @@ namespace Knight.Infra.Context
                 .AddJsonFile("appsettings.local.json")
                 .Build();
 
-            var client = new MongoClient(config.GetConnectionString("MONGODB_URI"));
-            var dataBase = client.GetDatabase("knight_challenge");
+            var client = new MongoClient(config["KnightStoreDatabase:ConnectionString"]);
+            var dataBase = client.GetDatabase(config["KnightStoreDatabase:DatabaseName"]);
 
             var optionsBuilder = new DbContextOptionsBuilder<KnightDbContext>();
             optionsBuilder.UseMongoDB(dataBase.Client, dataBase.DatabaseNamespace.DatabaseName);
