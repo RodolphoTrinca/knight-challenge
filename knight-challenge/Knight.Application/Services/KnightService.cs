@@ -114,7 +114,7 @@ namespace Knight.Application.Services
                 case "strength": return attributes.Strength;
                 case "dexterity": return attributes.Dexterity;
                 case "constitution": return attributes.Constituition;
-                case "intelligence": return attributes.Inteligence;
+                case "intelligence": return attributes.Intelligence;
                 case "wisdom": return attributes.Wisdom;
                 case "charisma": return attributes.Charisma;
                 default: return 0;

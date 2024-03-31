@@ -16,7 +16,7 @@ namespace Knight.DTOs
         public int Constituition { get; set; }
         
         [Range(0, 20, ErrorMessage = "The inteligence value has to be between 0 to 20")]
-        public int Inteligence { get; set; }
+        public int Intelligence { get; set; }
         
         [Range(0, 20, ErrorMessage = "The wisdom value has to be between 0 to 20")]
         public int Wisdom { get; set; }
@@ -29,7 +29,7 @@ namespace Knight.DTOs
             Strength = attributes.Strength;
             Dexterity = attributes.Dexterity;
             Constituition = attributes.Constituition;
-            Inteligence = attributes.Inteligence;
+            Intelligence = attributes.Intelligence;
             Wisdom = attributes.Wisdom;
             Charisma = attributes.Charisma;
         }
@@ -46,7 +46,7 @@ namespace Knight.DTOs
                 Strength = Strength,
                 Dexterity = Dexterity,
                 Constituition = Constituition,
-                Inteligence = Inteligence,
+                Intelligence = Intelligence,
                 Wisdom = Wisdom,
                 Charisma = Charisma,
             };

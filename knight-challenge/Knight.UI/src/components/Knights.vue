@@ -12,6 +12,7 @@ export default {
     },
     async created() {
         this.knights = await getKnights();
+        console.log(this.knights);
     }
 }
 </script>

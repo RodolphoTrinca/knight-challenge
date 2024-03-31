@@ -12,6 +12,6 @@ export default {
 
 <template>
   <Navbar/>
-  <Heroes/>
+  <Knights/>
   <Footer/>
 </template>
