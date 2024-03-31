@@ -7,7 +7,7 @@ namespace Knight.DTOs
     [Serializable]
     public class KnightDTO
     {
-        public string Id { get; set; }
+        public string? Id { get; set; }
         public string Name { get; set; }
         public string Nickname { get; set; }
         public DateTime BirthDay { get; set; }
@@ -34,7 +34,7 @@ namespace Knight.DTOs
         {
             return new Entity()
             {
-                Id = new ObjectId(Id),
+                Id = string.IsNullOrEmpty(Id) ? ObjectId.Empty : new ObjectId(Id),
                 Attributes = Attributes.ToAttributes(),
                 BirthDay  = BirthDay,
                 KeyAttribute = KeyAttribute,

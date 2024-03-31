@@ -68,25 +68,22 @@ builder.Services.AddScoped<IHeroRepository, HeroRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseSwagger(options =>
 {
-    app.UseSwagger(options =>
-    {
-        options.RouteTemplate = "api/docs/{documentname}/swagger.json";
+    options.RouteTemplate = "api/docs/{documentname}/swagger.json";
 
-        options.PreSerializeFilters.Add((swagger, httpReq) =>
-        {
-            //Clear servers -element in swagger.json because it got the wrong port when hosted behind reverse proxy
-            swagger.Servers.Clear();
-
-        });
-    });
-    app.UseSwaggerUI(c =>
+    options.PreSerializeFilters.Add((swagger, httpReq) =>
     {
-        c.SwaggerEndpoint("docs/v1/swagger.json", "Knight Challange API v1");
-        c.RoutePrefix = "api";
+        //Clear servers -element in swagger.json because it got the wrong port when hosted behind reverse proxy
+        swagger.Servers.Clear();
+
     });
-}
+});
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("docs/v1/swagger.json", "Knight Challange API v1");
+    c.RoutePrefix = "api";
+});
 
 app.UseRouting();
 app.UseHttpLogging();
