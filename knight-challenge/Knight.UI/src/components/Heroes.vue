@@ -3,7 +3,7 @@ import { getHeroes } from "@/http/knight";
 import type IKnight from "@/interfaces/IKnight";
 
 export default {
-    name: 'Knights',
+    name: 'Heroes',
     data() {
         return {
             tableHeaders: ['Name', 'Age', 'Weapons', 'Attribute', 'Attack', 'Exp'],

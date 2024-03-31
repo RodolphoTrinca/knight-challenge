@@ -21,6 +21,7 @@ namespace Knight.Application.Entity
             BirthDay = hero.BirthDay;
             Weapons = hero.Weapons;
             Attributes = hero.Attributes;   
+            KeyAttribute = hero.KeyAttribute;
         }
 
         public Knight()
@@ -41,7 +42,8 @@ namespace Knight.Application.Entity
             BirthDay = obj.BirthDay;
             Weapons = obj.Weapons;
             Attributes = obj.Attributes;
-            
+            KeyAttribute = obj.KeyAttribute;
+
             return this;
         }
     }

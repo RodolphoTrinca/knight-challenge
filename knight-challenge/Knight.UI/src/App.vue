@@ -1,17 +1,15 @@
 <script lang="ts">
 import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
-import Knights from './components/Knights.vue';
-import Heroes from './components/Heroes.vue';
 
 export default {
   name: 'App',
-  components: {Navbar, Knights, Heroes, Footer}
+  components: {Navbar, Footer}
 }
 </script>
 
 <template>
   <Navbar/>
-  <Knights/>
+  <RouterView />
   <Footer/>
 </template>

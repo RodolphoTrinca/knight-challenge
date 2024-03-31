@@ -1,4 +1,5 @@
 <script>
+
 export default {
     name: 'Navbar'
 }
@@ -29,9 +30,12 @@ export default {
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
+                <RouterLink to="/" class="navbar-item">
                     Knights
-                </a>
+                </RouterLink>
+                <RouterLink to="/heroes" class="navbar-item">
+                    Heroes
+                </RouterLink>
             </div>
         </div>
     </nav>
