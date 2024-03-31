@@ -1,4 +1,6 @@
-﻿using Knight.Application.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using Knight.Application.Entity;
+using Microsoft.AspNetCore.Antiforgery;
 
 namespace Knight.DTOs
 {

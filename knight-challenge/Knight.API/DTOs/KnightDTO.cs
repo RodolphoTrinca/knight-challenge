@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using System.ComponentModel.DataAnnotations;
+using MongoDB.Bson;
 using Entity = Knight.Application.Entity.Knight;
 
 namespace Knight.DTOs
@@ -12,6 +13,8 @@ namespace Knight.DTOs
         public DateTime BirthDay { get; set; }
         public List<WeaponDTO> Weapons { get; set; }
         public AttributesDTO Attributes { get; set; }
+        [RegularExpression("strength|dexterity|constitution|intelligence|wisdom|charisma", 
+        ErrorMessage = "The only values allowed is: strength, dexterity, constitution, intelligence, wisdom, charisma")]
         public string KeyAttribute { get; set; }
 
         public KnightDTO(Entity knight)

@@ -13,6 +13,21 @@ namespace Knight.Application.Entity
         public Attributes Attributes { get; set; }
         public string KeyAttribute { get; set; }
 
+        public Knight(Hero hero)
+        {
+            Id = hero.Id;
+            Name = hero.Name;
+            Nickname = hero.Nickname;
+            BirthDay = hero.BirthDay;
+            Weapons = hero.Weapons;
+            Attributes = hero.Attributes;   
+        }
+
+        public Knight()
+        {
+            
+        }
+
         internal Knight Update(Knight obj)
         {
             if (obj == null)

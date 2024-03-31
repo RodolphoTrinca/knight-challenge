@@ -5,7 +5,6 @@ using Knight.Infra.Context;
 using Knight.Infra.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.HttpLogging;
 using Serilog;
 using Microsoft.AspNetCore.Mvc;
@@ -64,6 +63,7 @@ builder.Services.AddSwaggerGen(c =>
 //Setup dependencies
 builder.Services.AddScoped<IKnightService, KnightService>();
 builder.Services.AddScoped<IKnightRepository, KnightRepository>();
+builder.Services.AddScoped<IHeroRepository, HeroRepository>();
 
 var app = builder.Build();
 

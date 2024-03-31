@@ -5,12 +5,20 @@ networks:
     driver: bridge
 
 services:
+  knight.ui.web:
+    restart: unless-stopped
+    build:
+      context: ./Knight.UI
+    ports:
+      - "8080:8080"
+    entrypoint: ["npm", "run", "serve"]
+
   knight.api.web:
-    image: knightWebAPI
+    image: knightwebapi
     container_name: knight.api.web
     build:
       context: .
-      dockerfile: knight.API/Dockerfile
+      dockerfile: Knight.API/Dockerfile
     depends_on:
       - mongo
     networks:

@@ -49,11 +49,11 @@ namespace Knight.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Get([FromQuery] int skip = 0, [FromQuery] int take = 100)
+        public async Task<IActionResult> Get([FromQuery]string filters = "", [FromQuery] int skip = 0, [FromQuery] int take = 100)
         {
             try
             {
-                var knights = _service.GetAll(skip, take);
+                var knights = _service.GetAll(filters, skip, take);
 
                 if (knights == null)
                 {
